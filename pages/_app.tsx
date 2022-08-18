@@ -2,6 +2,8 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import { MantineProvider } from "@mantine/core";
 
+import { MainLayout } from "../layouts/main-layout";
+
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
 
@@ -22,7 +24,9 @@ export default function App(props: AppProps) {
           colorScheme: "dark",
         }}
       >
-        <Component {...pageProps} />
+        <MainLayout>
+          <Component {...pageProps} />
+        </MainLayout>
       </MantineProvider>
     </>
   );
