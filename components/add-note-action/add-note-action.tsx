@@ -8,6 +8,7 @@ import {
   Textarea,
   Button,
   Space,
+  Group,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
@@ -122,15 +123,17 @@ const AddNoteAction = () => {
           />
 
           <Space h="lg" />
-          <Button
-            fullWidth
-            variant="gradient"
-            gradient={{ from: "teal", to: "lime", deg: 105 }}
-            type="submit"
-            loading={loading}
-          >
-            Save
-          </Button>
+          <Group>
+            <Button
+              fullWidth
+              variant="gradient"
+              gradient={{ from: "teal", to: "lime", deg: 105 }}
+              type="submit"
+              loading={loading}
+            >
+              Save
+            </Button>
+          </Group>
         </form>
       </Modal>
     </>
