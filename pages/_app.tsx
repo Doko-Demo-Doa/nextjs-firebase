@@ -4,6 +4,8 @@ import { MantineProvider } from "@mantine/core";
 
 import { MainLayout } from "../layouts/main-layout";
 
+import "../firebase/client-app";
+
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
 
@@ -22,6 +24,7 @@ export default function App(props: AppProps) {
         withNormalizeCSS
         theme={{
           colorScheme: "dark",
+          loader: "bars",
         }}
       >
         <MainLayout>
