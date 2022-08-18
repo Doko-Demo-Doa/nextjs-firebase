@@ -1,5 +1,6 @@
 import { initializeApp, getApps } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
 
 export const createFirebaseApp = () => {
   const clientCredentials = {
@@ -26,3 +27,4 @@ export const createFirebaseApp = () => {
 };
 
 export const firebaseApp = createFirebaseApp();
+export const firestoreDB = getFirestore(firebaseApp);

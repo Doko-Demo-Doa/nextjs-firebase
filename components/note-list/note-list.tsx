@@ -9,15 +9,14 @@ import {
   SimpleGrid,
 } from "@mantine/core";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import { collection, getFirestore } from "firebase/firestore";
+import { collection } from "firebase/firestore";
 
-import { firebaseApp } from "../../firebase/client-app";
-
+import { firestoreDB } from "../../firebase/client-app";
 import AddNoteAction from "../add-note-action/add-note-action";
 
 const NoteList = () => {
   const [values, loading, error] = useCollectionData(
-    collection(getFirestore(firebaseApp), "notes"),
+    collection(firestoreDB, "notes"),
     {
       snapshotListenOptions: { includeMetadataChanges: false },
     }
@@ -31,7 +30,7 @@ const NoteList = () => {
           <AddNoteAction />
 
           {values?.map((n, idx) => (
-            <Card key={idx} shadow="sm" p="lg" radius="md" withBorder sx={{}}>
+            <Card key={idx} shadow="sm" p="lg" radius="md" withBorder>
               <Card.Section>
                 <Image
                   src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
