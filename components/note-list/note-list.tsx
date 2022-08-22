@@ -21,7 +21,13 @@ const NoteList = () => {
     <Container>
       <LoadingOverlay visible={loading} overlayBlur={2} />
       {!loading && !error && (
-        <SimpleGrid cols={3}>
+        <SimpleGrid
+          breakpoints={[
+            { minWidth: "sm", cols: 2 },
+            { minWidth: "md", cols: 2 },
+            { minWidth: "lg", cols: 3 },
+          ]}
+        >
           <AddNoteAction />
 
           {snapshot?.docs?.map((n, idx) => (
